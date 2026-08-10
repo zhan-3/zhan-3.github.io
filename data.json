@@ -1,0 +1,98 @@
+{
+  "site": {
+    "title": "Zhan3 的软件导航",
+    "titleEn": "Zhan3's Software Guide"
+  },
+  "categories": [
+    { "id": "dev", "zh": "开发工具", "en": "Development" },
+    { "id": "resources", "zh": "资源获取", "en": "Resources" },
+    { "id": "network", "zh": "网络", "en": "Network" },
+    { "id": "study", "zh": "学习办公", "en": "Study & Office" }
+  ],
+  "items": [
+    {
+      "name": "GitHub",
+      "desc": "全球最大的代码托管与协作平台,开源项目聚集地。",
+      "url": "https://github.com",
+      "cat": "dev",
+      "tags": ["代码托管", "开源", "协作"]
+    },
+    {
+      "name": "Visual Studio Code",
+      "desc": "微软出品的轻量开源代码编辑器,插件生态庞大,几乎可扩展成任何开发环境。",
+      "url": "https://code.visualstudio.com",
+      "cat": "dev",
+      "tags": ["编辑器", "免费", "跨平台"]
+    },
+    {
+      "name": "Git",
+      "desc": "分布式版本控制系统的行业标准,配合 GitHub 使用。",
+      "url": "https://git-scm.com",
+      "cat": "dev",
+      "tags": ["版本控制", "命令行"]
+    },
+    {
+      "name": "Google Play",
+      "desc": "Android 官方应用商店,应用与游戏最权威的获取渠道。",
+      "url": "https://play.google.com",
+      "cat": "resources",
+      "tags": ["应用商店", "安卓"]
+    },
+    {
+      "name": "Telegram",
+      "desc": "加密通讯软件,同时是全球资源分享最活跃的平台之一。",
+      "url": "https://telegram.org",
+      "cat": "resources",
+      "tags": ["通讯", "资源分享"]
+    },
+    {
+      "name": "F-Droid",
+      "desc": "自由开源安卓应用的商店,只收录开源软件。",
+      "url": "https://f-droid.org",
+      "cat": "resources",
+      "tags": ["开源", "安卓"]
+    },
+    {
+      "name": "酷安",
+      "desc": "国内安卓应用分享与数码社区,应用资源丰富。",
+      "url": "https://www.coolapk.com",
+      "cat": "resources",
+      "tags": ["应用商店", "社区"]
+    },
+    {
+      "name": "Cloudflare",
+      "desc": "CDN、DNS 与网络安全服务,个人网站加速防护常用。",
+      "url": "https://www.cloudflare.com",
+      "cat": "network",
+      "tags": ["CDN", "DNS", "安全"]
+    },
+    {
+      "name": "Tailscale",
+      "desc": "基于 WireGuard 的组网工具,多设备间无缝互联,个人 NAS 远程访问利器。",
+      "url": "https://tailscale.com",
+      "cat": "network",
+      "tags": ["组网", "远程访问", "私有网络"]
+    },
+    {
+      "name": "Notion",
+      "desc": "集笔记、文档、数据库于一体的效率工具,个人知识管理首选之一。",
+      "url": "https://www.notion.so",
+      "cat": "study",
+      "tags": ["笔记", "效率", "知识管理"]
+    },
+    {
+      "name": "语雀",
+      "desc": "蚂蚁集团出品的知识库与文档协作工具,中文体验优秀。",
+      "url": "https://www.yuque.com",
+      "cat": "study",
+      "tags": ["笔记", "协作", "知识库"]
+    },
+    {
+      "name": "Coursera",
+      "desc": "全球知名在线课程平台,名校课程与证书项目丰富。",
+      "url": "https://www.coursera.org",
+      "cat": "study",
+      "tags": ["在线课程", "学习", "证书"]
+    }
+  ]
+}

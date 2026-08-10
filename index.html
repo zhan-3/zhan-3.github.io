@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="个人收藏的好用软件与资源导航">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+  <title>Zhan3 的软件导航</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./">
+        <span class="brand-logo" aria-hidden="true">⭐</span>
+        <span class="brand-title" id="site-title">Zhan3 的软件导航</span>
+      </a>
+      <div class="header-actions">
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input id="search" type="search" placeholder="搜索…" autocomplete="off" aria-label="搜索">
+        </label>
+        <button id="lang-toggle" class="icon-btn" type="button" aria-label="切换语言">EN</button>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="切换主题">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="cat-nav" aria-label="分类">
+    <div id="cats" class="cat-chips"><!-- JS 渲染 --></div>
+  </nav>
+
+  <main class="content">
+    <p id="result-count" class="result-count" hidden></p>
+    <section id="cards" class="cards" aria-live="polite"><!-- JS 渲染 --></section>
+    <p id="empty" class="empty" hidden>没有找到匹配的条目</p>
+  </main>
+
+  <footer class="site-footer">
+    <p id="footer-about">个人收藏的软件与资源导航,推荐仅供参考。</p>
+    <p id="footer-note">© <span id="year"></span> Zhan3 · <a href="https://github.com/zhan3" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
