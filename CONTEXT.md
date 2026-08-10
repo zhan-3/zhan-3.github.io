@@ -46,5 +46,5 @@
 - [x] 认证:SSH key 拷入 WSL 并修复 config(实测 `Hi zhan-3!`)
 - [x] 仓库 Settings → Pages → Source = GitHub Actions(已生效,站点上线 HTTP 200)
 - [x] `git push -u origin main` → 自动部署成功
-- [ ] impeccable 视觉打磨(内容就位后)
-- [ ] code-review 收尾
+- [x] impeccable 视觉打磨(ambient 背景、hero、卡片入场动画、空状态重置、令牌/对比度细化)——已上线,detect 检测零违规
+- [ ] code-review 收尾(若需要)
