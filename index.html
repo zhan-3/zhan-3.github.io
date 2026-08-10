@@ -27,6 +27,12 @@
     </div>
   </header>
 
+  <header class="hero">
+    <h1 id="hero-title" class="hero-title">Zhan3 的软件导航</h1>
+    <p id="hero-tagline" class="hero-tagline">好用软件与资源,一份自己的收藏。</p>
+    <p id="hero-count" class="hero-count"></p>
+  </header>
+
   <nav class="cat-nav" aria-label="分类">
     <div id="cats" class="cat-chips"><!-- JS 渲染 --></div>
   </nav>
@@ -34,7 +40,11 @@
   <main class="content">
     <p id="result-count" class="result-count" hidden></p>
     <section id="cards" class="cards" aria-live="polite"><!-- JS 渲染 --></section>
-    <p id="empty" class="empty" hidden>没有找到匹配的条目</p>
+    <div id="empty" class="empty" hidden>
+      <span class="empty-icon" aria-hidden="true">🔍</span>
+      <span id="empty-text">没有找到匹配的条目</span>
+      <button id="empty-reset" class="empty-reset" type="button">清空条件</button>
+    </div>
 
     <details class="external-box">
       <summary><span id="ext-title">站外资源</span> <span id="ext-hint" class="external-hint">(自行判断 · 与本站无关)</span></summary>

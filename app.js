@@ -14,7 +14,9 @@ const I18N = {
     externalTitle: "站外资源",
     externalHint: "(自行判断 · 与本站无关)",
     externalWarn: "以下为开源工具或社区渠道,仅供个人研究使用,请遵守当地法律法规,谨慎使用。",
-    notesTitle: "经验笔记"
+    notesTitle: "经验笔记",
+    heroTagline: "好用软件与资源,一份自己的收藏。",
+    resetEmpty: "清空条件"
   },
   en: {
     searchPlaceholder: "Search…",
@@ -29,7 +31,9 @@ const I18N = {
     externalTitle: "External Resources",
     externalHint: "(use at your own discretion)",
     externalWarn: "Open-source tools or community channels below — for personal research only. Use at your own discretion.",
-    notesTitle: "Notes"
+    notesTitle: "Notes",
+    heroTagline: "A personal collection of useful software & resources.",
+    resetEmpty: "Reset"
   }
 };
 
@@ -40,6 +44,8 @@ const state = {
   cat: "all",
   query: ""
 };
+
+let firstRender = true;
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -69,6 +75,12 @@ function applyLang() {
   $("ext-hint").textContent = t("externalHint");
   $("ext-warn").textContent = t("externalWarn");
   $("notes-title").textContent = t("notesTitle");
+  const heroT = $("hero-title");
+  if (heroT) heroT.textContent = $("site-title").textContent;
+  const heroTag = $("hero-tagline");
+  if (heroTag) heroTag.textContent = t("heroTagline");
+  const heroC = $("hero-count");
+  if (heroC && state.data) heroC.textContent = t("resultCount").replace("{n}", state.data.items.length);
   renderCats();
   render();
 }
@@ -108,7 +120,7 @@ function render() {
   if (items.length === 0) {
     $("cards").innerHTML = "";
     $("empty").hidden = false;
-    $("empty").textContent = t("empty");
+    $("empty-text").textContent = t("empty");
   } else {
     $("empty").hidden = true;
 
@@ -117,8 +129,8 @@ function render() {
       return c ? (c[s] || c.zh) : id;
     };
 
-    $("cards").innerHTML = items.map((it) => `
-      <a class="card" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
+    $("cards").innerHTML = items.map((it, idx) => `
+      <a class="card${firstRender ? " card-anim" : ""}"${firstRender ? ` style="--i:${idx}"` : ""} href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
         <span class="card-arrow" aria-hidden="true">↗</span>
         <span class="card-top">
           <span class="card-avatar" style="background:${catColor(it.cat)}">${esc(it.name.charAt(0).toUpperCase())}</span>
@@ -129,6 +141,7 @@ function render() {
         ${it.tags && it.tags.length ? `<span class="card-tags">${it.tags.map((x) => `<span class="card-tag">${esc(x)}</span>`).join("")}</span>` : ""}
       </a>`).join("");
   }
+  firstRender = false;
 
   renderExt();
   renderNotes();
@@ -161,6 +174,14 @@ $("lang-toggle").addEventListener("click", () => {
   state.lang = state.lang === "zh" ? "en" : "zh";
   localStorage.setItem("lang", state.lang);
   applyLang();
+});
+
+$("empty-reset").addEventListener("click", () => {
+  state.query = "";
+  state.cat = "all";
+  $("search").value = "";
+  renderCats();
+  render();
 });
 
 $("search").addEventListener("input", (e) => {
