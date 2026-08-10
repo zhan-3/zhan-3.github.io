@@ -7,33 +7,49 @@
     { "id": "dev", "zh": "开发工具", "en": "Development" },
     { "id": "resources", "zh": "资源获取", "en": "Resources" },
     { "id": "network", "zh": "网络", "en": "Network" },
-    { "id": "study", "zh": "学习办公", "en": "Study & Office" }
+    { "id": "study", "zh": "学习办公", "en": "Study & Office" },
+    { "id": "sys", "zh": "系统工具", "en": "System Tools" },
+    { "id": "media", "zh": "影音娱乐", "en": "Media & Fun" }
   ],
   "items": [
     {
       "name": "GitHub",
-      "desc": "全球最大的代码托管与协作平台,开源项目聚集地。",
+      "desc": "全球最大的代码托管与协作平台,开源项目聚集地,一定有你想要的。",
       "url": "https://github.com",
       "cat": "dev",
       "tags": ["代码托管", "开源", "协作"]
     },
     {
       "name": "Visual Studio Code",
-      "desc": "微软出品的轻量开源代码编辑器,插件生态庞大,几乎可扩展成任何开发环境。",
+      "desc": "微软出品的轻量开源代码编辑器,插件生态庞大。",
       "url": "https://code.visualstudio.com",
       "cat": "dev",
       "tags": ["编辑器", "免费", "跨平台"]
     },
     {
-      "name": "Git",
-      "desc": "分布式版本控制系统的行业标准,配合 GitHub 使用。",
-      "url": "https://git-scm.com",
+      "name": "Opencode",
+      "desc": "开源 AI 编程代理,配合 Playwright 可自动完成脚本编写与浏览器自动化。",
+      "url": "https://opencode.ai",
       "cat": "dev",
-      "tags": ["版本控制", "命令行"]
+      "tags": ["AI", "自动化", "开源"]
+    },
+    {
+      "name": "CC Switch",
+      "desc": "开源跨平台的 AI 编程工具配置管理助手,统一管理 Claude Code、Codex 等工具的配置。",
+      "url": "https://github.com/farion1231/cc-switch",
+      "cat": "dev",
+      "tags": ["AI", "配置管理", "开源"]
+    },
+    {
+      "name": "firecrawl",
+      "desc": "开源网站抓取 API,一键把网页转成干净的 Markdown 或结构化数据。",
+      "url": "https://firecrawl.dev",
+      "cat": "dev",
+      "tags": ["爬虫", "API", "开源"]
     },
     {
       "name": "Google Play",
-      "desc": "Android 官方应用商店,应用与游戏最权威的获取渠道。",
+      "desc": "Android 官方应用商店,应用与游戏最权威的获取渠道。账号建议用手机注册,降低封号率。",
       "url": "https://play.google.com",
       "cat": "resources",
       "tags": ["应用商店", "安卓"]
@@ -60,6 +76,20 @@
       "tags": ["应用商店", "社区"]
     },
     {
+      "name": "Chrome",
+      "desc": "Google 官方浏览器,配合账号跨设备同步书签与密码。",
+      "url": "https://www.google.com/chrome/",
+      "cat": "network",
+      "tags": ["浏览器", "谷歌"]
+    },
+    {
+      "name": "Tailscale",
+      "desc": "基于 WireGuard 的组网工具,多设备无缝互联,远程访问 NAS 利器。",
+      "url": "https://tailscale.com",
+      "cat": "network",
+      "tags": ["组网", "远程访问", "私有网络"]
+    },
+    {
       "name": "Cloudflare",
       "desc": "CDN、DNS 与网络安全服务,个人网站加速防护常用。",
       "url": "https://www.cloudflare.com",
@@ -67,32 +97,99 @@
       "tags": ["CDN", "DNS", "安全"]
     },
     {
-      "name": "Tailscale",
-      "desc": "基于 WireGuard 的组网工具,多设备间无缝互联,个人 NAS 远程访问利器。",
-      "url": "https://tailscale.com",
-      "cat": "network",
-      "tags": ["组网", "远程访问", "私有网络"]
-    },
-    {
-      "name": "Notion",
-      "desc": "集笔记、文档、数据库于一体的效率工具,个人知识管理首选之一。",
-      "url": "https://www.notion.so",
+      "name": "缺失的计算机基础",
+      "desc": "一套补计算机基础的免费公开课程,零基础也看得懂。",
+      "url": "https://www.criwits.top/missing/",
       "cat": "study",
-      "tags": ["笔记", "效率", "知识管理"]
+      "tags": ["教程", "基础"]
     },
     {
       "name": "语雀",
       "desc": "蚂蚁集团出品的知识库与文档协作工具,中文体验优秀。",
       "url": "https://www.yuque.com",
       "cat": "study",
-      "tags": ["笔记", "协作", "知识库"]
+      "tags": ["笔记", "知识库", "协作"]
     },
     {
-      "name": "Coursera",
-      "desc": "全球知名在线课程平台,名校课程与证书项目丰富。",
-      "url": "https://www.coursera.org",
-      "cat": "study",
-      "tags": ["在线课程", "学习", "证书"]
+      "name": "WinRAR",
+      "desc": "老牌压缩解压工具,官方免费版功能完整。",
+      "url": "https://www.win-rar.com",
+      "cat": "sys",
+      "tags": ["压缩", "解压"]
+    },
+    {
+      "name": "Everything",
+      "desc": "毫秒级本地文件搜索工具,输入即出结果。",
+      "url": "https://www.voidtools.com",
+      "cat": "sys",
+      "tags": ["搜索", "效率"]
+    },
+    {
+      "name": "格式工厂",
+      "desc": "老牌免费格式转换工具,视频、音频、图片全能转。",
+      "url": "https://www.pcfreetime.com",
+      "cat": "sys",
+      "tags": ["格式转换", "免费"]
+    },
+    {
+      "name": "图吧工具箱",
+      "desc": "硬件检测与系统工具合集,装机排查必备。",
+      "url": "https://www.tubatool.com",
+      "cat": "sys",
+      "tags": ["硬件", "检测", "工具箱"]
+    },
+    {
+      "name": "Windows 文件管理器",
+      "desc": "系统自带,务必熟练使用——文件操作的根基。",
+      "url": "https://support.microsoft.com/zh-cn/windows",
+      "cat": "sys",
+      "tags": ["系统", "基础"]
+    },
+    {
+      "name": "ZArchiver",
+      "desc": "安卓端强大的压缩文件管理器,支持多种格式。",
+      "url": "https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver",
+      "cat": "sys",
+      "tags": ["安卓", "压缩"]
+    },
+    {
+      "name": "Microsoft Authenticator",
+      "desc": "微软出品的手机两步验证应用,登录鉴权更安全。",
+      "url": "https://www.microsoft.com/security/mobile-authenticator-app",
+      "cat": "sys",
+      "tags": ["安全", "验证"]
+    },
+    {
+      "name": "Internet Download Manager",
+      "desc": "老牌下载加速器,配合浏览器插件显著提速。正版收费,此处为官网。",
+      "url": "https://www.internetdownloadmanager.com",
+      "cat": "sys",
+      "tags": ["下载", "加速"]
+    },
+    {
+      "name": "PotPlayer",
+      "desc": "强大轻量的本地视频播放器,格式通吃、倍速流畅。",
+      "url": "https://potplayer.daum.net",
+      "cat": "media",
+      "tags": ["播放器", "视频"]
     }
+  ],
+  "external": [
+    {
+      "name": "Clash Verge Rev",
+      "desc": "开源的 Clash 内核图形化客户端,多平台。网络代理用途,合规性请自行判断。",
+      "url": "https://github.com/clash-verge-rev/clash-verge-rev"
+    },
+    {
+      "name": "res-downloader",
+      "desc": "开源资源下载器,支持 B站 等多个平台的视频/音频/图集下载。",
+      "url": "https://github.com/putyy/res-downloader"
+    }
+  ],
+  "notes": [
+    "写在最前面:不要做伸手党。尽量只相信官网,如无官网则自行辨析资源可靠性,谨防坑钱诈骗。",
+    "Google 全家桶:Play 账号建议在手机上注册,降低封号率;梯子节点尽量固定一个地区,不要频繁更换。",
+    "一些常用渠道(zlib、音乐下载、gal 资源、刷课工具等)域名和分发渠道变化很快,建议在浏览器收藏夹里自己维护,本站不收录,免得失效也不背锅。",
+    "缺少的就用 agent 和 GitHub 探索吧。"
   ]
 }

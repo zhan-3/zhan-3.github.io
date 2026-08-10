@@ -324,3 +324,109 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ========== 站外资源 + 经验笔记 ========== */
+.external-box {
+  margin-top: 28px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+}
+
+.external-box summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.external-box summary::-webkit-details-marker { display: none; }
+.external-box summary::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.15s ease;
+  color: var(--text-dim);
+}
+.external-box[open] summary::before { transform: rotate(90deg); }
+
+.external-hint {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.external-list {
+  margin: 0;
+  padding: 0 18px 14px;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.ext-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13.5px;
+}
+
+.ext-item a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ext-item a:hover { text-decoration: underline; }
+
+.ext-desc { color: var(--text-dim); }
+
+.external-warn {
+  margin: 0;
+  padding: 0 18px 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.notes-section {
+  margin-top: 28px;
+}
+
+.notes-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.notes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.notes-list li {
+  position: relative;
+  padding: 10px 14px 10px 34px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+
+.notes-list li::before {
+  content: "💡";
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  font-size: 13px;
+}

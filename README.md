@@ -23,7 +23,11 @@
 }
 ```
 
-新增分类时在 `categories` 数组加一条(带中英文名)。推送 `main` 分支后,GitHub Actions 自动部署。
+- 新增分类时在 `categories` 数组加一条(带中英文名)。
+- `external` 数组 = 站外资源(折叠区,展示时带免责声明),只放开源工具或稳定链接。
+- `notes` 数组 = 经验笔记,纯文字条目。
+
+推送 `main` 分支后,GitHub Actions 自动部署。
 
 ## 本地预览
 
@@ -40,7 +44,7 @@ python3 -m http.server 8000
 ├── index.html          # 页面骨架
 ├── styles.css          # 样式(暗色默认 + 亮色)
 ├── app.js              # 渲染/筛选/搜索/双语/主题逻辑
-├── data.json           # 所有推荐条目
+├── data.json           # 条目(items)+ 站外资源(external)+ 笔记(notes)
 ├── CONTEXT.md          # 项目决策记录
 └── .github/workflows/  # Pages 自动部署
 ```

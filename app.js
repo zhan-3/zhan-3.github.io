@@ -10,7 +10,11 @@ const I18N = {
     langLabel: "EN",
     langTitle: "Switch to English",
     footerAbout: "个人收藏的软件与资源导航,推荐仅供参考,请以官网信息为准。",
-    footerGitHub: "GitHub"
+    footerGitHub: "GitHub",
+    externalTitle: "站外资源",
+    externalHint: "(自行判断 · 与本站无关)",
+    externalWarn: "以下为开源工具或社区渠道,仅供个人研究使用,请遵守当地法律法规,谨慎使用。",
+    notesTitle: "经验笔记"
   },
   en: {
     searchPlaceholder: "Search…",
@@ -21,7 +25,11 @@ const I18N = {
     langLabel: "中文",
     langTitle: "切换到中文",
     footerAbout: "A personal collection of useful software & resources. For reference only — always check official sites.",
-    footerGitHub: "GitHub"
+    footerGitHub: "GitHub",
+    externalTitle: "External Resources",
+    externalHint: "(use at your own discretion)",
+    externalWarn: "Open-source tools or community channels below — for personal research only. Use at your own discretion.",
+    notesTitle: "Notes"
   }
 };
 
@@ -57,6 +65,10 @@ function applyLang() {
   $("lang-toggle").setAttribute("aria-label", t("langTitle"));
   $("theme-toggle").setAttribute("aria-label", t("themeToggle"));
   $("footer-about").textContent = t("footerAbout");
+  $("ext-title").textContent = t("externalTitle");
+  $("ext-hint").textContent = t("externalHint");
+  $("ext-warn").textContent = t("externalWarn");
+  $("notes-title").textContent = t("notesTitle");
   renderCats();
   render();
 }
@@ -97,26 +109,45 @@ function render() {
     $("cards").innerHTML = "";
     $("empty").hidden = false;
     $("empty").textContent = t("empty");
-    return;
+  } else {
+    $("empty").hidden = true;
+
+    const catName = (id) => {
+      const c = state.data.categories.find((x) => x.id === id);
+      return c ? (c[s] || c.zh) : id;
+    };
+
+    $("cards").innerHTML = items.map((it) => `
+      <a class="card" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="card-arrow" aria-hidden="true">↗</span>
+        <span class="card-top">
+          <span class="card-avatar" style="background:${catColor(it.cat)}">${esc(it.name.charAt(0).toUpperCase())}</span>
+          <span class="card-name">${esc(it.name)}</span>
+          <span class="card-cat">${esc(catName(it.cat))}</span>
+        </span>
+        <span class="card-desc">${esc(it.desc)}</span>
+        ${it.tags && it.tags.length ? `<span class="card-tags">${it.tags.map((x) => `<span class="card-tag">${esc(x)}</span>`).join("")}</span>` : ""}
+      </a>`).join("");
   }
-  $("empty").hidden = true;
 
-  const catName = (id) => {
-    const c = state.data.categories.find((x) => x.id === id);
-    return c ? (c[s] || c.zh) : id;
-  };
+  renderExt();
+  renderNotes();
+}
 
-  $("cards").innerHTML = items.map((it) => `
-    <a class="card" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
-      <span class="card-arrow" aria-hidden="true">↗</span>
-      <span class="card-top">
-        <span class="card-avatar" style="background:${catColor(it.cat)}">${esc(it.name.charAt(0).toUpperCase())}</span>
-        <span class="card-name">${esc(it.name)}</span>
-        <span class="card-cat">${esc(catName(it.cat))}</span>
-      </span>
-      <span class="card-desc">${esc(it.desc)}</span>
-      ${it.tags && it.tags.length ? `<span class="card-tags">${it.tags.map((x) => `<span class="card-tag">${esc(x)}</span>`).join("")}</span>` : ""}
-    </a>`).join("");
+function renderExt() {
+  const el = $("external-list");
+  if (!el || !state.data.external) return;
+  el.innerHTML = state.data.external.map((x) => `
+    <li class="ext-item">
+      <a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.name)}</a>
+      <span class="ext-desc">${esc(x.desc)}</span>
+    </li>`).join("");
+}
+
+function renderNotes() {
+  const el = $("notes-list");
+  if (!el || !state.data.notes) return;
+  el.innerHTML = state.data.notes.map((n) => `<li>${esc(n)}</li>`).join("");
 }
 
 /* ---------- 事件 ---------- */

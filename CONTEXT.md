@@ -22,22 +22,29 @@
 | 视觉 | 暗色默认 + 亮色切换,卡片式布局,简洁现代工具站风 |
 | 站点名 | 「Zhan3 的软件导航」(可改) |
 
+## 内容分级制度(2026-08-10 定,用户授权我拿捏分寸)
+
+- **站内卡片**:有稳定官网/官方 GitHub 的正规软件。当前 23 条,6 个分类。
+- **外链区**(折叠 + 免责声明):开源工具但用途灰色 —— clash-verge-rev、res-downloader。
+- **笔记文字**(不放链接):盗版资源站与无官网灰色工具 —— zlib、世纪音乐网、Slpeey、真红小站、Tyranor、OCS、机场、IDM 破解版。
+- **完全不收录**:赔钱机场(商业灰色服务)、IDM 破解版(官网卡已覆盖)。
+
 ## 环境事实
 
 - git 身份:user.name=`zhan3`,email=`2375515459@qq.com`
 - GitHub 用户名 `zhan-3`(探测 HTTP 200);`zhan3` 是别人的账号
-- 用户已建仓库 `zhan-3/zhan3.github.io`(名字错,需改名 `zhan-3.github.io`)
-- SSH 认证失败(publickey)→ 待生成 SSH key 或改用 HTTPS
-- Pages 尚未启用(需设 Source = GitHub Actions)
+- 仓库 `zhan-3/zhan-3.github.io` 已就位(用户已改名),代码已推送,站点已上线
+- SSH key 已拷入 WSL 并修复 config(实测 `Hi zhan-3!`)
+- Pages Source = GitHub Actions 已生效,自动部署链路可用
 - `gh` CLI 未登录
-- `docs/recommendation` 已收到 50 行内容清单,待分拣确认后转 data.json
+- `docs/recommendation` 已收到 50 行内容清单,已分级转成 data.json
 
 ## 待办
 
-- [ ] 用户确认内容分拣表(⚠️ 争议项 + 教程文案区段与否)→ 转成 `data.json`
-- [ ] 用户把仓库改名为 `zhan-3.github.io`
-- [ ] 认证:SSH key(推荐)或 HTTPS 令牌
-- [ ] 仓库 Settings → Pages → Source = GitHub Actions
-- [ ] `git push -u origin main` → 自动部署
+- [x] 用户确认内容分拣表(争议项 + 教程文案区段与否)→ 转成 `data.json`(用户授权代理决定)
+- [x] 用户把仓库改名为 `zhan-3.github.io`
+- [x] 认证:SSH key 拷入 WSL 并修复 config(实测 `Hi zhan-3!`)
+- [x] 仓库 Settings → Pages → Source = GitHub Actions(已生效,站点上线 HTTP 200)
+- [x] `git push -u origin main` → 自动部署成功
 - [ ] impeccable 视觉打磨(内容就位后)
 - [ ] code-review 收尾
