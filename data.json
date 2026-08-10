@@ -4,12 +4,36 @@
     "titleEn": "Zhan3's Software Guide"
   },
   "categories": [
-    { "id": "dev", "zh": "开发工具", "en": "Development" },
-    { "id": "resources", "zh": "资源获取", "en": "Resources" },
-    { "id": "network", "zh": "网络", "en": "Network" },
-    { "id": "study", "zh": "学习办公", "en": "Study & Office" },
-    { "id": "sys", "zh": "系统工具", "en": "System Tools" },
-    { "id": "media", "zh": "影音娱乐", "en": "Media & Fun" }
+    {
+      "id": "dev",
+      "zh": "开发工具",
+      "en": "Development"
+    },
+    {
+      "id": "resources",
+      "zh": "资源获取",
+      "en": "Resources"
+    },
+    {
+      "id": "network",
+      "zh": "网络",
+      "en": "Network"
+    },
+    {
+      "id": "study",
+      "zh": "学习办公",
+      "en": "Study & Office"
+    },
+    {
+      "id": "sys",
+      "zh": "系统工具",
+      "en": "System Tools"
+    },
+    {
+      "id": "media",
+      "zh": "影音娱乐",
+      "en": "Media & Fun"
+    }
   ],
   "items": [
     {
@@ -17,173 +41,276 @@
       "desc": "全球最大的代码托管与协作平台,开源项目聚集地,一定有你想要的。",
       "url": "https://github.com",
       "cat": "dev",
-      "tags": ["代码托管", "开源", "协作"]
+      "tags": [
+        "代码托管",
+        "开源",
+        "协作"
+      ],
+      "icon": "icons/github.png"
     },
     {
       "name": "Visual Studio Code",
       "desc": "微软出品的轻量开源代码编辑器,插件生态庞大。",
       "url": "https://code.visualstudio.com",
       "cat": "dev",
-      "tags": ["编辑器", "免费", "跨平台"]
+      "tags": [
+        "编辑器",
+        "免费",
+        "跨平台"
+      ],
+      "icon": "icons/visual-studio-code.png"
     },
     {
       "name": "Opencode",
       "desc": "开源 AI 编程代理,配合 Playwright 可自动完成脚本编写与浏览器自动化。",
       "url": "https://opencode.ai",
       "cat": "dev",
-      "tags": ["AI", "自动化", "开源"]
+      "tags": [
+        "AI",
+        "自动化",
+        "开源"
+      ],
+      "icon": "icons/opencode.png"
     },
     {
       "name": "CC Switch",
       "desc": "开源跨平台的 AI 编程工具配置管理助手,统一管理 Claude Code、Codex 等工具的配置。",
       "url": "https://github.com/farion1231/cc-switch",
       "cat": "dev",
-      "tags": ["AI", "配置管理", "开源"]
+      "tags": [
+        "AI",
+        "配置管理",
+        "开源"
+      ],
+      "icon": "icons/cc-switch.png"
     },
     {
       "name": "firecrawl",
       "desc": "开源网站抓取 API,一键把网页转成干净的 Markdown 或结构化数据。",
       "url": "https://firecrawl.dev",
       "cat": "dev",
-      "tags": ["爬虫", "API", "开源"]
+      "tags": [
+        "爬虫",
+        "API",
+        "开源"
+      ],
+      "icon": "icons/firecrawl.png"
     },
     {
       "name": "Google Play",
       "desc": "Android 官方应用商店,应用与游戏最权威的获取渠道。账号建议用手机注册,降低封号率。",
       "url": "https://play.google.com",
       "cat": "resources",
-      "tags": ["应用商店", "安卓"]
+      "tags": [
+        "应用商店",
+        "安卓"
+      ],
+      "icon": "icons/google-play.png"
     },
     {
       "name": "Telegram",
       "desc": "加密通讯软件,同时是全球资源分享最活跃的平台之一。",
       "url": "https://telegram.org",
       "cat": "resources",
-      "tags": ["通讯", "资源分享"]
+      "tags": [
+        "通讯",
+        "资源分享"
+      ],
+      "icon": "icons/telegram.png"
     },
     {
       "name": "F-Droid",
       "desc": "自由开源安卓应用的商店,只收录开源软件。",
       "url": "https://f-droid.org",
       "cat": "resources",
-      "tags": ["开源", "安卓"]
+      "tags": [
+        "开源",
+        "安卓"
+      ],
+      "icon": "icons/f-droid.png"
     },
     {
       "name": "酷安",
       "desc": "国内安卓应用分享与数码社区,应用资源丰富。",
       "url": "https://www.coolapk.com",
       "cat": "resources",
-      "tags": ["应用商店", "社区"]
+      "tags": [
+        "应用商店",
+        "社区"
+      ],
+      "icon": "icons/coolapk.png"
     },
     {
       "name": "Chrome",
       "desc": "Google 官方浏览器,配合账号跨设备同步书签与密码。",
       "url": "https://www.google.com/chrome/",
       "cat": "network",
-      "tags": ["浏览器", "谷歌"]
+      "tags": [
+        "浏览器",
+        "谷歌"
+      ],
+      "icon": "icons/chrome.png"
     },
     {
       "name": "Tailscale",
       "desc": "基于 WireGuard 的组网工具,多设备无缝互联,远程访问 NAS 利器。",
       "url": "https://tailscale.com",
       "cat": "network",
-      "tags": ["组网", "远程访问", "私有网络"]
+      "tags": [
+        "组网",
+        "远程访问",
+        "私有网络"
+      ],
+      "icon": "icons/tailscale.png"
     },
     {
       "name": "Cloudflare",
       "desc": "CDN、DNS 与网络安全服务,个人网站加速防护常用。",
       "url": "https://www.cloudflare.com",
       "cat": "network",
-      "tags": ["CDN", "DNS", "安全"]
+      "tags": [
+        "CDN",
+        "DNS",
+        "安全"
+      ],
+      "icon": "icons/cloudflare.png"
     },
     {
       "name": "缺失的计算机基础",
       "desc": "一套补计算机基础的免费公开课程,零基础也看得懂。",
       "url": "https://www.criwits.top/missing/",
       "cat": "study",
-      "tags": ["教程", "基础"]
+      "tags": [
+        "教程",
+        "基础"
+      ],
+      "icon": "icons/criwits.png"
     },
     {
       "name": "语雀",
       "desc": "蚂蚁集团出品的知识库与文档协作工具,中文体验优秀。",
       "url": "https://www.yuque.com",
       "cat": "study",
-      "tags": ["笔记", "知识库", "协作"]
+      "tags": [
+        "笔记",
+        "知识库",
+        "协作"
+      ],
+      "icon": "icons/yuque.png"
     },
     {
       "name": "WinRAR",
       "desc": "老牌压缩解压工具,官方免费版功能完整。",
       "url": "https://www.win-rar.com",
       "cat": "sys",
-      "tags": ["压缩", "解压"]
+      "tags": [
+        "压缩",
+        "解压"
+      ],
+      "icon": "icons/winrar.png"
     },
     {
       "name": "Everything",
       "desc": "毫秒级本地文件搜索工具,输入即出结果。",
       "url": "https://www.voidtools.com",
       "cat": "sys",
-      "tags": ["搜索", "效率"]
+      "tags": [
+        "搜索",
+        "效率"
+      ],
+      "icon": "icons/everything.png"
     },
     {
       "name": "格式工厂",
       "desc": "老牌免费格式转换工具,视频、音频、图片全能转。",
       "url": "https://www.pcfreetime.com",
       "cat": "sys",
-      "tags": ["格式转换", "免费"]
+      "tags": [
+        "格式转换",
+        "免费"
+      ],
+      "icon": "icons/pcfreetime.png"
     },
     {
       "name": "图吧工具箱",
       "desc": "硬件检测与系统工具合集,装机排查必备。",
       "url": "https://www.tubatool.com",
       "cat": "sys",
-      "tags": ["硬件", "检测", "工具箱"]
+      "tags": [
+        "硬件",
+        "检测",
+        "工具箱"
+      ],
+      "icon": "icons/tubatool.png"
     },
     {
       "name": "Windows 文件管理器",
       "desc": "系统自带,务必熟练使用——文件操作的根基。",
       "url": "https://support.microsoft.com/zh-cn/windows",
       "cat": "sys",
-      "tags": ["系统", "基础"]
+      "tags": [
+        "系统",
+        "基础"
+      ],
+      "icon": "icons/windows.png"
     },
     {
       "name": "ZArchiver",
       "desc": "安卓端强大的压缩文件管理器,支持多种格式。",
       "url": "https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver",
       "cat": "sys",
-      "tags": ["安卓", "压缩"]
+      "tags": [
+        "安卓",
+        "压缩"
+      ],
+      "icon": "icons/zarchiver.png"
     },
     {
       "name": "Microsoft Authenticator",
       "desc": "微软出品的手机两步验证应用,登录鉴权更安全。",
       "url": "https://www.microsoft.com/security/mobile-authenticator-app",
       "cat": "sys",
-      "tags": ["安全", "验证"]
+      "tags": [
+        "安全",
+        "验证"
+      ],
+      "icon": "icons/microsoft-authenticator.png"
     },
     {
       "name": "Internet Download Manager",
       "desc": "老牌多线程下载工具,支持断点续传,配合浏览器插件显著提速。正版收费,此处为官网。",
       "url": "https://www.internetdownloadmanager.com",
       "cat": "sys",
-      "tags": ["下载", "加速"]
+      "tags": [
+        "下载",
+        "加速"
+      ],
+      "icon": "icons/internet-download-manager.png"
     },
     {
       "name": "PotPlayer",
       "desc": "强大轻量的本地视频播放器,格式通吃、倍速流畅。",
       "url": "https://potplayer.daum.net",
       "cat": "media",
-      "tags": ["播放器", "视频"]
+      "tags": [
+        "播放器",
+        "视频"
+      ],
+      "icon": "icons/potplayer.png"
     }
   ],
   "external": [
     {
       "name": "Clash Verge Rev",
       "desc": "开源的 Clash 内核图形化客户端,多平台。网络代理用途,合规性请自行判断。",
-      "url": "https://github.com/clash-verge-rev/clash-verge-rev"
+      "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "icon": "icons/clash-verge-rev.png"
     },
     {
       "name": "res-downloader",
       "desc": "开源资源下载器,支持 B站 等多个平台的视频/音频/图集下载。",
-      "url": "https://github.com/putyy/res-downloader"
+      "url": "https://github.com/putyy/res-downloader",
+      "icon": "icons/res-downloader.png"
     }
   ],
   "notes": [

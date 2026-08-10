@@ -133,7 +133,10 @@ function render() {
       <a class="card${firstRender ? " card-anim" : ""}"${firstRender ? ` style="--i:${idx}"` : ""} href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
         <span class="card-arrow" aria-hidden="true">↗</span>
         <span class="card-top">
-          <span class="card-avatar" style="background:${catColor(it.cat)}">${esc(it.name.charAt(0).toUpperCase())}</span>
+          <span class="card-avatar" style="background:${catColor(it.cat)}">
+            <span class="avatar-letter">${esc(it.name.charAt(0).toUpperCase())}</span>
+            ${it.icon ? `<img class="avatar-img" src="${esc(it.icon)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+          </span>
           <span class="card-name">${esc(it.name)}</span>
           <span class="card-cat">${esc(catName(it.cat))}</span>
         </span>
