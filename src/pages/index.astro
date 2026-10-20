@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPosts } from '../lib/posts';
+const posts = await getPosts();
+const topics = [...new Set(posts.map(post => post.data.topic))];
+---
+<!--
+THESIS: 首页只有实际 topic 与日期、标题列表，不加口号、分层说明或空状态填充。
+OWN-WORLD: 柔和雾蓝灰底、深灰蓝文字、克制蓝色焦点，无阴影的扁平层次，首页标题和主题使用轻量像素字，日期与正文保持系统字体。
+STORY: 按文章实际 topic 浏览，各 topic 内按日期倒序；用键盘或点击打开，工具箱留在导航。
+FIRST VIEWPORT: 仅显示真实 topic 和文章；没有文章时不填充提示，短页个人名片自然落底。
+FORM: 按实际 topic 归档，正文单列，页面说明只保留屏幕阅读器所需标签。
+-->
+<Layout title="首页" active="home">
+  <section class="journal" id="writing" aria-label="文章">
+    <h1 class="sr-only">文章</h1>
+    {topics.map(topic => {
+      const entries = posts.filter(post => post.data.topic === topic);
+      return <section class="journal-group" aria-label={topic}>
+        <div class="journal-group-heading"><h2>{topic}</h2></div>
+        <ol class="journal-list" aria-label={`${topic}文章`}>
+          {entries.map(post => <li><a class="journal-entry" id={`entry-${post.id}`} href={`/posts/${post.id}/`}><time datetime={post.data.date}>{post.data.date}</time><span class="journal-entry-title">{post.data.title}</span>{post.data.draft ? <span class="draft-label">内容草稿</span> : <span></span>}<span class="entry-pointer" aria-hidden="true">↵</span></a></li>)}
+        </ol>
+      </section>;
+    })}
+  </section>
+</Layout>
+
+<script>
+  const entries = [...document.querySelectorAll<HTMLAnchorElement>('.journal-entry')];
+  document.addEventListener('keydown', event => {
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.isComposing || !entries.length) return;
+    const target = event.target;
+    const index = entries.findIndex(entry => entry === target);
+    const outsideList = target === document.body || target === document.querySelector('#main');
+    if (index < 0 && !outsideList) return;
+    // Single-letter shortcuts are active only while a journal link has focus.
+    const next = event.key === 'ArrowDown' || (index >= 0 && event.key.toLowerCase() === 'j');
+    const previous = event.key === 'ArrowUp' || (index >= 0 && event.key.toLowerCase() === 'k');
+    if (!next && !previous) return;
+    event.preventDefault();
+    const destination = index < 0 ? (next ? 0 : entries.length - 1) : Math.max(0, Math.min(entries.length - 1, index + (next ? 1 : -1)));
+    entries[destination].focus();
+  });
+</script>

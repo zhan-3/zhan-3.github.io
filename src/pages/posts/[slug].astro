@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  return (await getPosts()).map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+interface Props { post: CollectionEntry<'posts'>; }
+const { post } = Astro.props;
+const { Content } = await render(post);
+const backLink = `/#entry-${post.id}`;
+---
+<Layout title={post.data.title} description={post.data.description}>
+  <div class="article-top"><a class="quiet-link" href={backLink} id="back-to-journal">← 返回日志</a><span class="keyboard-help"><kbd>Esc</kbd> 返回</span></div>
+  <div class="article-layout">
+    <article class="post">
+      <header class="post-header">
+        <div class="article-meta"><time datetime={post.data.date}>{post.data.date} · 整理日期</time>{post.data.draft && <span class="draft-label">内容草稿</span>}</div>
+        <h1>{post.data.title}</h1>
+        <p class="post-topic">{post.data.topic}</p>
+      </header>
+      {post.data.draft && <p class="post-preview-note">内容草稿，待校对；日期为本次整理日期。</p>}
+      <div class="prose"><Content /></div>
+      <a class="quiet-link post-back" href={backLink}>← 返回日志</a>
+    </article>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.isComposing) return;
+    const target = event.target;
+    if (target instanceof HTMLElement && target.closest('input, textarea, select, [contenteditable], dialog, [role="dialog"]')) return;
+    event.preventDefault();
+    document.querySelector<HTMLAnchorElement>('#back-to-journal')!.click();
+  });
+</script>

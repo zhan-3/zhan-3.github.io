@@ -1,0 +1,21 @@
+<footer class="profile-footer">
+  <div class="profile-main">
+    <div class="avatar-wrap">
+      <span class="avatar-fallback" aria-hidden="true">Z</span>
+      <img class="avatar" src="/avatar.jpg" alt="zhan-3 的 GitHub 公开头像" width="64" height="64" loading="lazy" referrerpolicy="no-referrer" />
+    </div>
+    <div class="profile-copy">
+      <a class="profile-name" href="https://github.com/zhan-3" target="_blank" rel="noopener noreferrer">Zhan3 <span aria-hidden="true">↗</span><span class="sr-only">（新标签页打开 GitHub）</span></a>
+      <p>个人简介待补充<span class="placeholder-note"> · 此处为明确占位</span></p>
+    </div>
+    <a class="profile-github" href="https://github.com/zhan-3" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only">（新标签页打开）</span></a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll<HTMLImageElement>('.avatar').forEach((image) => {
+    const fallback = () => { image.hidden = true; };
+    image.addEventListener('error', fallback);
+    if (image.complete && image.naturalWidth === 0) fallback();
+  });
+</script>

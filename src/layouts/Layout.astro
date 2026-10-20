@@ -1,0 +1,33 @@
+---
+import Profile from '../components/Profile.astro';
+import BrandMark from '../components/BrandMark.astro';
+import '../styles/global.css';
+interface Props { title: string; description?: string; active?: 'home' | 'toolbox'; }
+const { title, description = 'Zhan3 的个人博客与工具箱。', active } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#aabfce" />
+    <title>{title} · Zhan3</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Zhan3 首页"><BrandMark /><span>Zhan3<span class="brand-period">.</span></span></a>
+        <nav aria-label="主导航">
+          <a href="/" aria-current={active === 'home' ? 'page' : undefined}>首页</a>
+          <a href="/toolbox/" aria-current={active === 'toolbox' ? 'page' : undefined}>工具箱</a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1"><slot /></main>
+      <Profile />
+    </div>
+  </body>
+</html>

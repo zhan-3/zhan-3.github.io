@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ToolIcon from '../components/ToolIcon.astro';
+import { recommendations as data, linkSource } from '../lib/content';
+---
+<Layout title="工具箱" active="toolbox" description={`按用途整理 ${data.items.length} 条工具与官方链接，支持名称、描述、标签搜索与分类筛选。`}>
+  <header class="page-intro"><p class="intro-caption">软件、链接与一些使用提醒</p><h1>工具箱<span class="title-pixel" aria-hidden="true">▪</span></h1><p>好用的工具，放在找得到的地方。<br />按用途归档，链接优先指向官网、官方文档或原作者仓库。</p></header>
+  <section class="toolbox-browser" aria-label="查找推荐工具">
+    <form class="search-form" role="search" action="/toolbox/">
+      <label for="tool-search">搜索工具</label>
+      <div class="search-field"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg><input id="tool-search" name="q" type="search" placeholder="搜索名称、用途或标签…" autocomplete="off" /><button class="search-clear" type="button" hidden>清除</button></div>
+    </form>
+    <div class="toolbox-grid">
+      <nav class="category-nav" aria-label="工具分类"><span class="category-heading">按用途浏览</span><div class="category-buttons"><button type="button" data-category="all" aria-pressed="true">全部工具 <span>{data.items.length}</span></button>{data.categories.map(cat => <button type="button" data-category={cat.id} aria-pressed="false">{cat.zh} <span>{data.items.filter(item => item.cat === cat.id).length}</span></button>)}</div></nav>
+      <div class="results-area"><div class="results-heading"><h2 id="results-title">全部工具</h2><p id="result-count" role="status" aria-live="polite">{data.items.length} 条推荐</p></div>
+        <div class="tool-list" id="tool-list">{data.items.map(item => <a class="tool-item" data-cat={item.cat} data-search={[item.name, item.desc, ...item.tags].join(' ').toLowerCase()} href={item.url} target="_blank" rel="noopener noreferrer"><div class="tool-title"><ToolIcon item={item} /><h3>{item.name}</h3><span class="tool-arrow" aria-hidden="true">↗</span></div><p>{item.desc}</p><span class="tool-source">{linkSource(item.url)}</span><div class="tool-tags">{item.tags.map(tag => <span>{tag}</span>)}</div><span class="sr-only">（外部链接，新标签页打开）</span></a>)}</div>
+        <div class="empty-state" id="empty-state" hidden><span class="empty-pixel" aria-hidden="true">[ ? ]</span><h3>没有找到匹配的工具</h3><p>试试更短的关键词，或切换到其他分类。</p><button class="reset-button" type="button" id="reset-filters">清空搜索，查看全部</button></div>
+      </div>
+    </div>
+    <noscript><p class="draft-notice">当前未启用 JavaScript，已显示全部推荐。启用后可使用搜索与分类。</p></noscript>
+  </section>
+</Layout>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('#tool-search')!;
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-category]')];
+  const items = [...document.querySelectorAll<HTMLAnchorElement>('.tool-item')];
+  const count = document.querySelector<HTMLElement>('#result-count')!;
+  const title = document.querySelector<HTMLElement>('#results-title')!;
+  const empty = document.querySelector<HTMLElement>('#empty-state')!;
+  const clear = document.querySelector<HTMLButtonElement>('.search-clear')!;
+  const params = new URLSearchParams(window.location.search);
+  let category = buttons.some(button => button.dataset.category === params.get('cat')) ? params.get('cat')! : 'all';
+  search.value = params.get('q') ?? '';
+
+  function filter(updateUrl = true) {
+    const query = search.value.trim().toLocaleLowerCase();
+    const terms = query.split(/\s+/).filter(Boolean);
+    let visible = 0;
+    for (const item of items) {
+      const matches = (category === 'all' || item.dataset.cat === category) && terms.every(term => item.dataset.search!.includes(term));
+      item.hidden = !matches;
+      if (matches) visible++;
+    }
+    for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.category === category));
+    const selected = buttons.find(button => button.dataset.category === category)!;
+    title.textContent = category === 'all' ? '全部工具' : selected.childNodes[0].textContent!.trim();
+    count.textContent = `${visible} 条推荐${query ? ' · 搜索结果' : ''}`;
+    empty.hidden = visible !== 0;
+    clear.hidden = !search.value;
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      query ? url.searchParams.set('q', search.value.trim()) : url.searchParams.delete('q');
+      category !== 'all' ? url.searchParams.set('cat', category) : url.searchParams.delete('cat');
+      history.replaceState(null, '', url);
+    }
+  }
+  document.querySelector('.search-form')!.addEventListener('submit', event => { event.preventDefault(); filter(); });
+  search.addEventListener('input', () => filter());
+  buttons.forEach(button => button.addEventListener('click', () => { category = button.dataset.category!; filter(); }));
+  clear.addEventListener('click', () => { search.value = ''; filter(); search.focus(); });
+  document.querySelector('#reset-filters')!.addEventListener('click', () => { category = 'all'; search.value = ''; filter(); search.focus(); });
+  filter(false);
+</script>

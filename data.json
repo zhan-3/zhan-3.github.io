@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Zhan3 的软件导航",
-    "titleEn": "Zhan3's Software Guide"
+    "title": "Zhan3 的工具箱",
+    "titleEn": "Zhan3's Toolbox"
   },
   "categories": [
     {
@@ -37,6 +37,113 @@
   ],
   "items": [
     {
+      "name": "Clash Verge Rev",
+      "desc": "网络代理客户端，本身不提供线路或服务；请确认配置来源、使用权限及当地法规。",
+      "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "cat": "network",
+      "tags": ["网络代理", "客户端", "开源"],
+      "icon": "icons/clash-verge-rev.png"
+    },
+    {
+      "name": "res-downloader",
+      "desc": "资源下载工具；仅用于自有、已获授权或许可允许的内容，不绕过访问、付费或 DRM 限制。",
+      "url": "https://github.com/putyy/res-downloader",
+      "cat": "sys",
+      "tags": ["下载", "资源管理", "开源"],
+      "icon": "icons/res-downloader.png"
+    },
+    {
+      "name": "PowerToys",
+      "desc": "微软的 Windows 实用工具集，提供窗口布局、批量重命名和快捷启动等功能；按需启用模块即可。",
+      "url": "https://learn.microsoft.com/zh-cn/windows/powertoys/",
+      "cat": "sys",
+      "tags": ["Windows", "效率", "系统增强"]
+    },
+    {
+      "name": "Obsidian",
+      "desc": "以本地 Markdown 文件为基础的笔记工具，支持链接与插件；适合愿意自己组织知识的人。",
+      "url": "https://obsidian.md/",
+      "cat": "study",
+      "tags": ["笔记", "Markdown", "本地文件"]
+    },
+    {
+      "name": "Anki",
+      "desc": "基于间隔重复的记忆卡片工具，适合词汇和知识点复习；制卡与持续复习需要投入时间。",
+      "url": "https://apps.ankiweb.net/",
+      "cat": "study",
+      "tags": ["学习", "记忆卡片", "复习"]
+    },
+    {
+      "name": "OBS Studio",
+      "desc": "开源录屏与直播工具，支持多场景、多来源录制；复杂场景需要配置音频与编码参数。",
+      "url": "https://obsproject.com/",
+      "cat": "media",
+      "tags": ["录屏", "直播", "开源"]
+    },
+    {
+      "name": "Thorium Reader",
+      "desc": "EDRLab 开发的电子书阅读器，适合 EPUB 等格式的本地阅读；提供阅读工具，不提供书源。",
+      "url": "https://thorium.edrlab.org/en/",
+      "cat": "study",
+      "tags": ["阅读", "EPUB", "电子书"]
+    },
+    {
+      "name": "UniGetUI",
+      "desc": "以图形界面管理 WinGet 等包管理器的软件安装与更新；操作前仍需确认软件包来源。",
+      "url": "https://devolutions.net/unigetui/",
+      "cat": "sys",
+      "tags": ["Windows", "软件管理", "更新"]
+    },
+    {
+      "name": "7-Zip",
+      "desc": "开源压缩与解压工具，支持 7z、ZIP 等常见格式。",
+      "url": "https://www.7-zip.org/",
+      "cat": "sys",
+      "tags": ["压缩", "解压", "开源"]
+    },
+    {
+      "name": "PixPin",
+      "desc": "截图、贴图与文字识别工具，可用于整理屏幕上的信息。",
+      "url": "https://pixpin.cn/",
+      "cat": "sys",
+      "tags": ["截图", "贴图", "OCR"]
+    },
+    {
+      "name": "Pi",
+      "desc": "可扩展的终端 AI 编程代理，通过扩展与技能定制工作方式。",
+      "url": "https://pi.dev/",
+      "cat": "dev",
+      "tags": ["AI", "终端", "编程代理"]
+    },
+    {
+      "name": "Playwright",
+      "desc": "浏览器自动化与端到端测试工具，提供页面交互、截图和网络调试能力。",
+      "url": "https://playwright.dev/",
+      "cat": "dev",
+      "tags": ["浏览器", "自动化", "测试"]
+    },
+    {
+      "name": "Browser Use",
+      "desc": "面向 AI 代理的浏览器自动化工具，将网页操作接入代理工作流。",
+      "url": "https://browser-use.com/",
+      "cat": "dev",
+      "tags": ["AI", "浏览器", "自动化"]
+    },
+    {
+      "name": "Chrome DevTools",
+      "desc": "Chrome 内置开发者工具；此处链接到网络请求、页面调试等官方文档。",
+      "url": "https://developer.chrome.com/docs/devtools/",
+      "cat": "dev",
+      "tags": ["调试", "网络", "HAR", "CDP"]
+    },
+    {
+      "name": "PCL2",
+      "desc": "Plain Craft Launcher 2，Minecraft 启动与版本管理工具；链接为原作者仓库。",
+      "url": "https://github.com/Meloong-Git/PCL",
+      "cat": "media",
+      "tags": ["Minecraft", "启动器", "游戏"]
+    },
+    {
       "name": "GitHub",
       "desc": "全球最大的代码托管与协作平台,开源项目聚集地,一定有你想要的。",
       "url": "https://github.com",
@@ -59,18 +166,6 @@
         "跨平台"
       ],
       "icon": "icons/visual-studio-code.png"
-    },
-    {
-      "name": "Opencode",
-      "desc": "开源 AI 编程代理,配合 Playwright 可自动完成脚本编写与浏览器自动化。",
-      "url": "https://opencode.ai",
-      "cat": "dev",
-      "tags": [
-        "AI",
-        "自动化",
-        "开源"
-      ],
-      "icon": "icons/opencode.png"
     },
     {
       "name": "CC Switch",
@@ -98,7 +193,7 @@
     },
     {
       "name": "Google Play",
-      "desc": "Android 官方应用商店,应用与游戏最权威的获取渠道。账号建议用手机注册,降低封号率。",
+      "desc": "Google 提供的 Android 应用与游戏商店，链接指向官方入口。",
       "url": "https://play.google.com",
       "cat": "resources",
       "tags": [
@@ -109,7 +204,7 @@
     },
     {
       "name": "Telegram",
-      "desc": "加密通讯软件,同时是全球资源分享最活跃的平台之一。",
+      "desc": "跨平台即时通讯工具，支持群组、频道与文件分享。",
       "url": "https://telegram.org",
       "cat": "resources",
       "tags": [
@@ -117,28 +212,6 @@
         "资源分享"
       ],
       "icon": "icons/telegram.png"
-    },
-    {
-      "name": "F-Droid",
-      "desc": "自由开源安卓应用的商店,只收录开源软件。",
-      "url": "https://f-droid.org",
-      "cat": "resources",
-      "tags": [
-        "开源",
-        "安卓"
-      ],
-      "icon": "icons/f-droid.png"
-    },
-    {
-      "name": "酷安",
-      "desc": "国内安卓应用分享与数码社区,应用资源丰富。",
-      "url": "https://www.coolapk.com",
-      "cat": "resources",
-      "tags": [
-        "应用商店",
-        "社区"
-      ],
-      "icon": "icons/coolapk.png"
     },
     {
       "name": "Chrome",
@@ -150,18 +223,6 @@
         "谷歌"
       ],
       "icon": "icons/chrome.png"
-    },
-    {
-      "name": "Tailscale",
-      "desc": "基于 WireGuard 的组网工具,多设备无缝互联,远程访问 NAS 利器。",
-      "url": "https://tailscale.com",
-      "cat": "network",
-      "tags": [
-        "组网",
-        "远程访问",
-        "私有网络"
-      ],
-      "icon": "icons/tailscale.png"
     },
     {
       "name": "Cloudflare",
@@ -200,7 +261,7 @@
     },
     {
       "name": "WinRAR",
-      "desc": "老牌压缩解压工具,官方免费版功能完整。",
+      "desc": "压缩与解压工具，提供试用；长期使用与授权方式以官网说明为准。",
       "url": "https://www.win-rar.com",
       "cat": "sys",
       "tags": [
@@ -234,7 +295,7 @@
     {
       "name": "图吧工具箱",
       "desc": "硬件检测与系统工具合集,装机排查必备。",
-      "url": "https://www.tubatool.com",
+      "url": "https://www.tubatool.org/",
       "cat": "sys",
       "tags": [
         "硬件",
@@ -268,7 +329,7 @@
     {
       "name": "Microsoft Authenticator",
       "desc": "微软出品的手机两步验证应用,登录鉴权更安全。",
-      "url": "https://www.microsoft.com/security/mobile-authenticator-app",
+      "url": "https://www.microsoft.com/zh-cn/security/mobile-authenticator-app",
       "cat": "sys",
       "tags": [
         "安全",
@@ -290,7 +351,7 @@
     {
       "name": "PotPlayer",
       "desc": "强大轻量的本地视频播放器,格式通吃、倍速流畅。",
-      "url": "https://potplayer.daum.net",
+      "url": "https://potplayer.tv/",
       "cat": "media",
       "tags": [
         "播放器",
@@ -298,26 +359,5 @@
       ],
       "icon": "icons/potplayer.png"
     }
-  ],
-  "external": [
-    {
-      "name": "Clash Verge Rev",
-      "desc": "开源的 Clash 内核图形化客户端,多平台。网络代理用途,合规性请自行判断。",
-      "url": "https://github.com/clash-verge-rev/clash-verge-rev",
-      "icon": "icons/clash-verge-rev.png"
-    },
-    {
-      "name": "res-downloader",
-      "desc": "开源资源下载器,支持 B站 等多个平台的视频/音频/图集下载。",
-      "url": "https://github.com/putyy/res-downloader",
-      "icon": "icons/res-downloader.png"
-    }
-  ],
-  "notes": [
-    "写在最前面:不要做伸手党。尽量只相信官网,如无官网则自行辨析资源可靠性,谨防坑钱诈骗。",
-    "Google 全家桶:Play 账号建议在手机上注册,降低封号率;梯子节点尽量固定一个地区,不要频繁更换。",
-    "一些常用渠道(zlib、音乐下载、gal 资源、刷课工具等)域名和分发渠道变化很快,建议在浏览器收藏夹里自己维护,本站不收录,免得失效也不背锅。",
-    "B站视频解析:BBDown、哔哩哔哩解析器这类工具名字记下即可,链接自己找,本站不放。",
-    "缺少的就用 agent 和 GitHub 探索吧。"
   ]
 }

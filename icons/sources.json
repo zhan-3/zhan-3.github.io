@@ -1,0 +1,29 @@
+{
+  "icons/github.png": {
+    "software": "GitHub",
+    "status": "verified",
+    "sourceUrl": "https://github.githubassets.com/favicons/favicon.png",
+    "verifiedAt": "2026-10-20",
+    "transform": "Converted to RGBA PNG, maximum 64px; original 32px size retained.",
+    "sourceSha256": "74cf90ac2fe6624ab1056cacea11cf7ed4f8bef54bbb0e869638013bba45bc08",
+    "sha256": "f078489e95e9215020750de11a36b07a21d0ee4eb7365e3af3346d9cb5aecbee"
+  },
+  "icons/visual-studio-code.png": {
+    "software": "Visual Studio Code",
+    "status": "verified",
+    "sourceUrl": "https://code.visualstudio.com/favicon.ico",
+    "verifiedAt": "2026-10-20",
+    "transform": "Decoded official ICO, converted to RGBA PNG and resized to maximum 64px.",
+    "sourceSha256": "1782aac747e92a3334fb1c9b5ca275ef30af5aa35b1208eba9d207aa6889a49a",
+    "sha256": "5c7b73e47bf7c99a2260579428fa3ae1eed4e4ae0da8e4b2301a0dc366699668"
+  },
+  "icons/telegram.png": {
+    "software": "Telegram",
+    "status": "verified",
+    "sourceUrl": "https://telegram.org/img/t_logo.png",
+    "verifiedAt": "2026-10-20",
+    "transform": "Converted to RGBA PNG and resized from 128px to 64px.",
+    "sourceSha256": "88afe4caad9d3ef9d7b4a5301d1b2b4378b54d233038079f0145e2f387f4eed9",
+    "sha256": "ae591d857d58cc770496f216242bfd41bc6540635eb5ef0378a9c416a850b5db"
+  }
+}
